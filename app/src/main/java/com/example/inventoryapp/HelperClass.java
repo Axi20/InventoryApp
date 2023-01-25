@@ -2,20 +2,22 @@ package com.example.inventoryapp;
 
 public class HelperClass {
 
-    public String getFirstname() {
-        return firstname;
+    String name, username, email, password;
+
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setName(String firstname) {
+        this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -34,18 +36,12 @@ public class HelperClass {
         this.password = password;
     }
 
-    String firstname;
-    String lastname;
-    String email;
-
-    public HelperClass(String firstname, String lastname, String email, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public HelperClass(String name, String username, String email, String password) {
+        this.name = name;
+        this.username = username;
         this.email = email;
         this.password = password;
     }
-
-    String password;
 
     public HelperClass() {
     }

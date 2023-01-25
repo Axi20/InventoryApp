@@ -35,11 +35,11 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:id="@+id/signup_firstname"
+                android:id="@+id/signup_name"
                 android:background="@drawable/blue_border"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Firstname"
+                android:hint="Name"
                 android:inputType="text"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:textColor="@color/black"/>
@@ -47,13 +47,13 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:id="@+id/signup_lastname"
+                android:id="@+id/signup_username"
                 android:background="@drawable/blue_border"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Lastname"
+                android:hint="Username"
                 android:inputType="text"
-                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawableLeft="@drawable/ic_baseline_person_pin_24"
                 android:textColor="@color/black"/>
 
             <EditText
