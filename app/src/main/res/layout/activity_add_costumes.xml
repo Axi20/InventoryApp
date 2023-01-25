@@ -3,16 +3,122 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="20dp"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Jelmezek hozzáadása oldal"
+        android:text="Új jelmez hozzáadása"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <EditText
+        android:id="@+id/costumes_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Jelmez neve"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jelmez mérete:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.936" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <RadioButton
+            android:id="@+id/size_xs_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="XS"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/size_s_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="S"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/size_m_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="M"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/size_l_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="L"
+            android:textSize="20dp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/costume_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Jelmez napi ára"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <Button
+        android:id="@+id/costumes_to_DB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_border"
+        android:backgroundTint="@color/queenBlue"
+        android:text="Hozzáadás"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/costume_price"
+        app:layout_constraintVertical_bias="0.346" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
