@@ -40,6 +40,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".NewRentActivity"/>
+        <activity android:name=".RentActivity"/>
+        <activity android:name=".CostumesActivity"/>
+        <activity android:name=".AddCostumesActivity"/>
+        <activity android:name=".DeleteCostumes"/>
+        <activity android:name=".EditCostumes"/>
     </application>
 
 </manifest>
