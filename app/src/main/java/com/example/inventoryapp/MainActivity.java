@@ -4,9 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.inventoryapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     private ActivityMainBinding binding;
 
@@ -16,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        showUsername();
 
         binding.newRentButton.setOnClickListener(v->{
             Intent intent = new Intent(MainActivity.this, NewRentActivity.class);
@@ -46,5 +52,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, EditCostumes.class);
             startActivity(intent);
         });
+    }
+    public void showUsername(){
+        Intent intent = getIntent();
+        String usernameUser = intent.getStringExtra("name");
+        binding.welcomeText.setText("Üdvözöljük, " + usernameUser);
     }
 }

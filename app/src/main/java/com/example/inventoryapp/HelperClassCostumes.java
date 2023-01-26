@@ -5,6 +5,8 @@ public class HelperClassCostumes {
     String costume_name;
     String costume_size;
 
+    public HelperClassCostumes() {}
+
     public HelperClassCostumes(String costume_name, String costume_size, String costume_price) {
         this.costume_name = costume_name;
         this.costume_size = costume_size;

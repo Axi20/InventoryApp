@@ -78,9 +78,18 @@ public class LoginActivity extends AppCompatActivity {
                     binding.loginUsername.setError(null);
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
 
-                    if (!Objects.equals(passwordFromDB, userPassword)) {
+                    if (passwordFromDB.equals(userPassword)) {
                         binding.loginUsername.setError(null);
+
+                        String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
+                        String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                        String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra("name", nameFromDB);
+                        intent.putExtra("email", emailFromDB);
+                        intent.putExtra("username", usernameFromDB);
+                        intent.putExtra("password", passwordFromDB );
                         startActivity(intent);
                     } else {
                         binding.loginPassword.setError("Invalid credentials");
