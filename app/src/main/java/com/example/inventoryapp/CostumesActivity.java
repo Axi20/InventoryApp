@@ -38,6 +38,11 @@ public class CostumesActivity extends AppCompatActivity {
         RecyclerAdapter adapter = new RecyclerAdapter(data);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+       //tManager(this);
+        //recyclerView.setLayoutManager(layoutManager);
+
+
     }
 
 
