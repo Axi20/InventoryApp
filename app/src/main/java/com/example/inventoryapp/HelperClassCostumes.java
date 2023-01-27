@@ -4,6 +4,7 @@ public class HelperClassCostumes {
 
     String costume_name;
     String costume_size;
+    String costume_price;
 
     public HelperClassCostumes() {}
 
@@ -12,8 +13,6 @@ public class HelperClassCostumes {
         this.costume_size = costume_size;
         this.costume_price = costume_price;
     }
-
-    String costume_price;
 
     public String getCostume_name() {
         return costume_name;
@@ -38,6 +37,4 @@ public class HelperClassCostumes {
     public void setCostume_price(String costume_price) {
         this.costume_price = costume_price;
     }
-
-
 }

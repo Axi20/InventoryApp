@@ -9,6 +9,7 @@ import com.example.inventoryapp.databinding.ActivityNewRentBinding;
 
 public class NewRentActivity extends AppCompatActivity {
 
+    //Set binding
     private ActivityNewRentBinding binding;
 
     @Override

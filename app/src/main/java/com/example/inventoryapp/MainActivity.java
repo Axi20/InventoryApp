@@ -4,15 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.inventoryapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
+    //Set binding
     private ActivityMainBinding binding;
 
     @Override
@@ -21,8 +17,11 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        //Show username in the menu screen
         showUsername();
 
+        //Menu buttons
         binding.newRentButton.setOnClickListener(v->{
             Intent intent = new Intent(MainActivity.this, NewRentActivity.class);
             startActivity(intent);

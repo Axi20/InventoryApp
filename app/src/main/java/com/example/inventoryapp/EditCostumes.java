@@ -7,6 +7,7 @@ import com.example.inventoryapp.databinding.ActivityEditCostumesBinding;
 
 public class EditCostumes extends AppCompatActivity {
 
+    //Set up binding
     private ActivityEditCostumesBinding binding;
 
     @Override

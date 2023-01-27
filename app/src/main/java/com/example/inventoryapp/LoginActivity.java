@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.inventoryapp.databinding.ActivityLoginBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,10 +13,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Objects;
-
 public class LoginActivity extends AppCompatActivity {
 
+    //Set binding
     private ActivityLoginBinding binding;
 
     @Override
@@ -27,20 +25,22 @@ public class LoginActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        //Login button
         binding.loginButton.setOnClickListener(v->{
             if (!validateEmail() | !validatePassword()){
-
             }else{
                 checkUser();
             }
         });
 
+        //Redirecting the user to the sign up page if it have no account
         binding.signupRedirectText.setOnClickListener(v->{
             Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
             startActivity(intent);
         });
     }
 
+    //Email validation function
     public Boolean validateEmail(){
         String val = binding.loginUsername.getText().toString();
         if(val.isEmpty()){
@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    //Password validation function
     public Boolean validatePassword(){
         String val = binding.loginPassword.getText().toString();
         if(val.isEmpty()){
@@ -86,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        //Add profile data to the intent to pass
                         intent.putExtra("name", nameFromDB);
                         intent.putExtra("email", emailFromDB);
                         intent.putExtra("username", usernameFromDB);
@@ -103,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                //Handle errors
             }
         });
     }

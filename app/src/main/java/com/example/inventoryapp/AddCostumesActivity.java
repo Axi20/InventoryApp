@@ -3,21 +3,23 @@ package com.example.inventoryapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.inventoryapp.databinding.ActivityAddCostumesBinding;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddCostumesActivity extends AppCompatActivity {
-
+    //Set binding
     private ActivityAddCostumesBinding binding;
+
+    //Database set up
     FirebaseDatabase database;
     DatabaseReference reference;
+
+    //Variable what store the radiobutton value
     String selectedValue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,7 @@ public class AddCostumesActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        //Radiobutton onClick
        binding.sizeXsButton.setOnClickListener(v->{
            if(binding.sizeXsButton.isChecked()){selectedValue = binding.sizeXsButton.getText().toString();}
        });
@@ -41,10 +44,12 @@ public class AddCostumesActivity extends AppCompatActivity {
             if(binding.sizeLButton.isChecked()){selectedValue = binding.sizeLButton.getText().toString();}
         });
 
-
+        //Save costumes into DB button
         binding.costumesToDB.setOnClickListener(v->{
             database = FirebaseDatabase.getInstance();
             reference = database.getReference("costumes");
+
+            //Fields what will be save on the DB's costumes table
             String costume_name = binding.costumesName.getText().toString();
             String costume_size = selectedValue;
             String costume_price = binding.costumePrice.getText().toString();
