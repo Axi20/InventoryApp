@@ -38,7 +38,7 @@ public class SignupActivity extends AppCompatActivity {
             HelperClass helperClass = new HelperClass(name, username, email, password);
             reference.child(username).setValue(helperClass);
 
-            Toast.makeText(SignupActivity.this, "You have signup successfully!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignupActivity.this, "Sikeres regisztráció!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
             startActivity(intent);
         });

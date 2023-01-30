@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     android:padding="10dp"
     android:layout_height="wrap_content">
 
@@ -11,7 +11,8 @@
         android:id="@+id/rent_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bérlések"
+        android:text="@string/rent_title"
+        android:textColor="@color/royal_gold"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
         android:textAlignment="center"

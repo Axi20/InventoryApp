@@ -55,6 +55,6 @@ public class MainActivity extends AppCompatActivity {
     public void showUsername(){
         Intent intent = getIntent();
         String usernameUser = intent.getStringExtra("name");
-        binding.welcomeText.setText("Üdvözöljük, " + usernameUser);
+        binding.welcomeText.setText("" + usernameUser + "!");
     }
 }
